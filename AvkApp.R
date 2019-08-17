@@ -1,11 +1,3 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 library(ggplot2)
@@ -16,7 +8,7 @@ ui <- fluidPage(
   # Application title
   titlePanel("Hur rik ska du bli på börsen?"),
   
-  # Sidebar with a slider input for... 
+  # Sidebar with a slider inputs
   sidebarLayout(
     sidebarPanel(
       sliderInput("start",
@@ -57,7 +49,6 @@ ui <- fluidPage(
     
     # Show text and plot of values generated 
     mainPanel(
-      #plotOutput("utv"),
       h4(uiOutput("avk")),
       h3(strong(textOutput("varde"))),
       plotOutput("utv")
@@ -65,7 +56,7 @@ ui <- fluidPage(
   )
 )
 
-# Define server logic required to..
+# Define server logic required
 server <- function(input, output) {
   
   output$rimlig = renderText({
